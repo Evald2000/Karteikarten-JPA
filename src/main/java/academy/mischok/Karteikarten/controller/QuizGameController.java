@@ -7,8 +7,6 @@ import academy.mischok.Karteikarten.cardUserAntwort;
 import academy.mischok.Karteikarten.controller.repository.AntwortRepository;
 import academy.mischok.Karteikarten.controller.repository.CardRepository;
 import academy.mischok.Karteikarten.controller.repository.StapelRepository;
-import jakarta.persistence.EntityManager;
-import jakarta.persistence.Query;
 import jakarta.persistence.criteria.Predicate;
 import org.springframework.beans.factory.annotation.Autowired;
 
