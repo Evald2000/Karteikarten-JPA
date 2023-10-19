@@ -49,7 +49,7 @@ public class QuizGameController {
     public String quizGame(Model model,
                            @RequestParam(required = false) List<Long> stapelId,
                            @RequestParam(required = false) List<String> tag,
-                           @RequestParam(required = false) Integer zahl) {gi
+                           @RequestParam(required = false) Integer zahl) {
 
         if (color == null) {
             color = "#002a5c";
