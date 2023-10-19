@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="icon" href="mars.png" type="image/png">
+    <link th:href="@{../css/styleLoginHome.css}" rel="stylesheet">
+
+</head>
+<body>
+<div th:replace="fragments/nav">This content will be gone</div>
+<div class="container-body">
+    <div class="container">
+
+        <div class="tile">
+            <a th:href="@{/quizMenuNew}">Quiz</a>
+        </div>
+        <div class="tile">
+            <a th:href="@{/lernenMenu}">Learn</a>
+        </div>
+        <div class="tile">
+            <a th:href="@{/create}">Create/<br>Edit</br></a>
+        </div>
+    </div>
+</div>
+<div th:replace="fragments/footer">This content will be gone</div>
+</body>
+</html>

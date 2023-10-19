@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>quizResult</title>
+    <link th:href="@{/css/styleQuizResult.css}" rel="stylesheet">
+</head>
+<body>
+<div th:replace="fragments/nav"></div>
+
+<div class="container">
+    <h1>Quiz Result</h1>
+    <br>
+    <div class="table-container">
+        <div class="table-column">
+
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>Question</th>
+                    <th>Answer</th>
+                </tr>
+
+                </thead>
+                <tbody>
+                <tr class="tile" th:each="card : ${cardListQuiz}">
+                    <td th:text="${card.question} "></td>
+                    <td th:text="    ${card.answer}"></td>
+                </tr>
+
+
+                </tbody>
+            </table>
+        </div>
+        <div class="table-column">
+
+            <table class="table">
+                <thead>
+                <tr>
+
+                    <th>User Answer</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr class="tile" th:each="antwort : ${antwort}">
+
+                    <td th:text="${antwort.user_antwort} "></td>
+                </tr>
+                </tbody>
+
+            </table>
+        </div>
+        <div class="table-column">
+
+            <table>
+                <thead>
+                <tr>
+                    <th>True/False</th>
+
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="element : ${trueOderFalse}">
+                    <td th:if="${element == 1}" style="background-color: green;">True</td>
+                    <td th:if="${element == 0}" style="background-color: red;">False</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+    <div class="points">
+        <h1 th:text="${points}"></h1>
+        <h1>/</h1>
+        <h1 th:text="${gesamt}"></h1>
+    </div>
+
+    <a th:href="@{/quizMenuNew}"> &#x2B05 Go to Quiz Menu</a>
+    <a th:href="@{/quizResultsView}"> &#10145 Go to Quiz statistic</a>
+</div>
+<div th:replace="fragments/footer">This content will be gone</div>
+</body>
+</html>

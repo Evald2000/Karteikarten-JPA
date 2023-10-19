@@ -1,0 +1,88 @@
+body{
+  margin: 0;
+  padding: 0;
+  background-color: #ededed;
+  height: 100vh;
+    font-family: Calibre,sans-serif;
+    color:#1a222a;
+    justify-content: center;
+}
+.container{
+display: flex;
+min-height: 88%;
+        max-width: 2000px;
+        max-height: 2000px;
+        margin: 0 auto;
+
+}
+
+.container-stapel{
+padding-left:100px;
+padding-top:100px;
+justify-content: left;
+
+}
+
+
+input{
+width: 50px;
+height: 50px;
+padding-right: 10px;
+    font-size: 30px;
+}
+.button{
+width: 150px;
+height: 50px;
+    margin: 10px;
+    background-color: #002a5c;
+    color: #f9f9f9;
+}
+.container-fach{
+padding-left:200px;
+padding-top:100px;
+justify-content: center;
+
+}
+.container-frage{
+  padding-left:200px;
+  padding-top:100px;
+  justify-content: right;
+
+  }
+.container-submit{
+display:flex;
+justify-content: center;
+/*align-items: end;*/
+}
+
+form {
+}
+
+.tile{
+    font-size: 30px;
+}
+
+.num{
+    width: 120px;
+
+}
+
+.go{
+    display:flex;
+    justify-content: center;
+}
+
+
+
+input[type='checkbox'] {
+    accent-color: #002a5c;
+}
+
+input[type='radio'] {
+    accent-color: #002a5c;
+}
+
+a:hover{
+    transform: scale(1.1);
+    cursor: pointer;
+}

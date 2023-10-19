@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Customization</title>
+    <link href="/css/customStyle.css" rel="stylesheet">
+</head>
+<div th:replace="fragments/nav"></div>
+<body class="bdy">
+<div class="bigdiv">
+    <div class="container">
+        <h1 style="color: black; padding: 15px">Choose card color</h1></br>
+        </br>
+        <form action="#" th:action="@{/setColor(colorPost='#FF6B6C')}" method="post">
+            <div class="smallContainer">
+                <input class="dot" style="background-color:#FF6B6C" type="submit" value=""/>
+            </div>
+        </form>
+        <form action="#" th:action="@{/setColor(colorPost='#7180AC')}" method="post">
+            <div class="smallContainer">
+                <input class="dot" style="background-color:#7180AC" type="submit" value=""/>
+            </div>
+        </form>
+        <form action="#" th:action="@{/setColor(colorPost='#FFB100')}" method="post">
+            <div class="smallContainer">
+                <input class="dot" style="background-color:#FFB100" type="submit" value=""/>
+            </div>
+        </form>
+        <form action="#" th:action="@{/setColor(colorPost='#72B01D')}" method="post">
+            <div class="smallContainer">
+                <input class="dot" style="background-color:#72B01D" type="submit" value=""/>
+            </div>
+        </form>
+        <form action="#" th:action="@{/setColor(colorPost='#DF2935')}" method="post">
+            <div class="smallContainer">
+                <input class="dot" style="background-color:#DF2935" type="submit" value=""/>
+            </div>
+        </form>
+
+    </div>
+</div>
+</body>
+</html>

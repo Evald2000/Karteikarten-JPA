@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Create Card</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link th:href="@{css/StyleCreateCard.css}" rel="stylesheet">
+
+</head>
+<body>
+<div th:replace="fragments/nav"></div>
+<div class="container">
+    <div class="tile">
+        <form action="#" th:action="@{/CreateCard}" th:object="${NewCardObject}" method="post">
+            <h1>Create your Card:</h1>
+            <br>
+            Question: <br>
+            <input class="wind" type="text" th:field="*{question}" placeholder="Question" autocomplete="off" autofocus
+                   required> <br>
+            Answer: <br>
+            <input class="wind" type="text" th:field="*{answer}" placeholder="Answer" autocomplete="off" required><br>
+
+            <h1 th:text="${answer}"></h1>
+            Tags: <br>
+            <input class="wind" type="text" th:field="*{tags}" placeholder="House, vacation, ..." required autocomplete="off">
+            <br>
+
+            <br>
+            <label for="stapel">Stapel auswählen:</label><br>
+            <div class="dropdown">
+
+                <select class="form-control" id="stapel" name="stapel" th:field="*{stapel_id}">
+                    <option th:each="stapel : ${stapelList}" th:value="${stapel.id}" th:text="${stapel.name}" required>
+                        Apple
+                    </option>
+                </select>
+
+            </div>
+
+            <br>
+            <br>
+
+
+            <input class="btn" type="submit" value="Create">
+            <input class="btn" type="reset" value="Reset">
+        </form>
+
+    </div>
+</div>
+<div th:replace="fragments/footer">This content will be gone</div>
+</body>
+</html>

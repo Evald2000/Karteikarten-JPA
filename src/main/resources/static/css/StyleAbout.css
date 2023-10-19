@@ -1,0 +1,91 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Calibre,sans-serif;
+    background-color: #ededed;
+    height: 100vh;
+}
+
+.container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+        flex-wrap: wrap;
+        min-height: 80%;
+        max-width: 2000px;
+        max-height: 2000px;
+        margin: 50 auto;
+        margin-top: 50px
+        padding:50px 0 0px;
+        position: relative;
+    
+}
+.container-body{
+
+padding:0 0 268px;
+}
+
+h1 {
+margin-top: 50px;
+
+padding-bottom: 40px;
+}
+
+.tile {
+
+
+    position: relative;
+        height: 500px;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, 230px); /* Feste Breite für jede Box und automatische Anordnung */
+        gap: 10px;
+        width: 400px;
+        border: 10px solid #002a5c;
+        box-shadow: 0 5px 9px rgba(0, 0, 0, 0.8);
+        margin: 10px;
+        padding: 20px;
+        text-align: center;
+        text-justify: center;
+        transition: transform 0.3s;
+        cursor: pointer;
+        background-color: #F9#F9#F9;
+    border-radius: 5px;
+    color:#1a222a;
+    
+}
+
+tile::before {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+}
+
+.tile a {
+    font-family: Calibre,sans-serif;
+    font-size: 75px;
+    font-weight: bold;
+    color:#1a222a;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.tile:hover{
+transform: scale(1.1);
+    background-color: #002a5c;
+    border: 10px solid #f9f9f9;
+    color: #f9f9f9;
+
+}
+
+
+
+

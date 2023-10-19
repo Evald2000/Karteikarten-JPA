@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Quiz Results View</title>
+    <link th:href="@{/css/styleQuizResult.css}" rel="stylesheet">
+</head>
+<body>
+<div th:replace="fragments/nav"></div>
+
+<div class="container">
+    <h1>Quiz Statistic</h1>
+    <br>
+    <div class="table-container">
+        <div class="table-column">
+
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>Quiz Id</th>
+                    <th>Stapel Name</th>
+                    <th>Tags</th>
+                    <th>Richtig</th>
+                    <th>Gesamt</th>
+                    <th>%</th>
+                    <th></th>
+
+                </tr>
+                </thead>
+                <tbody>
+                <tr class="tile" th:each="list : ${list}">
+                    <td th:text="${list.quizId} "></td>
+                    <td th:text="${list.stapels} "></td>
+                    <td th:text="${list.tags} "></td>
+                    <td th:text="${list.rictigeAntworte}"></td>
+                    <td th:text="${list.gesamteFrage}"></td>
+                    <td th:text="((${list.rictigeAntworte}/${list.gesamteFrage})*100)+'%'"></td>
+                    <form action="#" th:action="@{/quizResultDetails(id=${list.quizId})}" method="post">
+                        <td><input type="submit" value="Details"/></td>
+                    </form>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+
+    </div>
+    <a th:href="@{/quizMenuNew}"> &#x2B05 Go to Quiz Menu</a>
+</div>
+<div th:replace="fragments/footer">This content will be gone</div>
+</body>
+</html>

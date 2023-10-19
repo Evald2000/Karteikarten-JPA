@@ -1,0 +1,187 @@
+.lernen-container{
+    padding: 0 0 400px;
+}
+
+body{
+    font-family: Calibre,sans-serif;
+    background-color: #ededed;
+}
+
+.a{color: #E7484F}
+.b{color: #F68B1D}
+.c{color: #FCED00}
+.d{color: #009E4F}
+.e{color: #00AAC3}
+.f{color:  #732982}
+
+.rainbow{
+    background-color: #343A40;
+    border-radius: 4px;
+    color: #fff;
+    cursor: pointer;
+    padding: 8px 16px;
+
+}
+
+
+.rainbow-5:hover{
+    background-image:     linear-gradient(
+            to right,
+            #E7484F,
+            #E7484F 16.65%,
+            #F68B1D 16.65%,
+            #F68B1D 33.3%,
+            #FCED00 33.3%,
+            #FCED00 49.95%,
+            #009E4F 49.95%,
+            #009E4F 66.6%,
+            #00AAC3 66.6%,
+            #00AAC3 83.25%,
+            #732982 83.25%,
+            #732982 100%,
+            #E7484F 100%
+
+
+
+    );
+    animation:slidebg 4s linear infinite;
+}
+
+@keyframes slidebg {
+    to {
+        background-position:20vw;
+    }
+}
+.follow{
+    margin-top: 40px;
+}
+.follow a{
+    color: black;
+    padding: 8px 16px;
+    text-decoration: none;
+}
+
+.buttons{
+display:flex;
+justify-content:center;
+}
+
+.btn{
+   justify-content: space-between;
+   margin: 20px;
+   margin-left: 50px;
+    margin-right: 50px;
+   display:flex;
+   justify-content:center;
+   height:70px;
+    width: 120px;
+    font-weight: 900;
+    border: none;
+    border-radius: 8px;
+    font-size: 30px;
+    padding-top: 18px;
+
+
+}
+
+.btn:hover{
+    transform: scale(1.1);
+    cursor: pointer;
+}
+.normal{
+    background-color: #1279f0;
+}
+.richtig{
+    background-color: #04AA6D;
+}
+
+.falsch{
+    background-color: #b02a37;
+}
+
+
+.bcard{
+margin-top:-50px;
+display:flex;
+justify-content:center;
+
+
+}
+
+.flip-card {
+
+    font-size: 30px;
+    background-color: transparent;
+    width: 500px;
+    height: 450px;
+    perspective: 1000px; /* Remove this if you don't want the 3D effect */
+    margin-left: 0px;
+
+  }
+
+  /* This container is needed to position the front and back side */
+  .flip-card-inner {
+  display:flex;
+
+  text-align:center;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+
+  }
+
+  /* Do an horizontal flip when you move the mouse over the flip box container */
+  .flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+
+  }
+  .container{
+
+  display: flex;
+  min-height: 82%;
+          max-width: 2000px;
+          max-height: 2000px;
+          margin: 0 auto;
+          justify-content:center;
+          align-items:center;
+          padding-top:8%
+
+  }
+
+  /* Position the front and back side */
+  .flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; /* Safari */
+    backface-visibility: hidden;
+      background-color: #002a5c;
+           display: flex;
+          justify-content: center;
+          align-items: center;
+
+  }
+
+  /* Style the front side (fallback if image is missing) */
+  .flip-card-front {
+      background-color: #002a5c;
+    color: white;
+      background-color: #002a5c;
+
+  }
+
+  /* Style the back side */
+  .flip-card-back {
+    background-color: dodgerblue;
+    color: white;
+    transform: rotateY(180deg);
+      background-color:#1a222a;
+
+
+  }
+
+  h1{
+    padding: 60px;
+  }

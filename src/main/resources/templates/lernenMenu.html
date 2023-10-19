@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Lernen menu</title>
+
+    <link th:href="@{/css/lernenMenuStyle.css}" rel="stylesheet">
+
+
+</head>
+<body>
+
+<div th:replace="fragments/nav"></div>
+<div class="container">
+    <div class="tile" th:each="stapel : ${stapelList}">
+        <a th:href="@{/lernen/}+${stapel.id}"><p th:text="${stapel.name}"></p></a>
+
+    </div>
+    <div class="tile">
+        <a th:href="@{/CreateStack}"><p>+</p></a>
+    </div>
+</div>
+<div th:replace="fragments/footer"></div>
+</body>
+
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>StapelView</title>
+    <link th:href="@{/css/styleQuizResult.css}" rel="stylesheet">
+</head>
+<body>
+<div th:replace="fragments/nav"></div>
+
+<div class="container">
+    <br>
+    <div>
+        <form action="#" th:action="@{/deleteStapel/{id}(id=${stapel_id})}" method="post">
+            <button class="btn delete" type="submit" th:value="${stapel_id}" th:text="Delete-stack">Delete</button>
+        </form>
+        <br>
+        <a th:href="@{/CreateCardMenu}"> &#10145 Go to Create card</a>
+        <br>
+    </div>
+    <br>
+    <h1>Karten Liste</h1>
+    <br>
+    <div class="table-container">
+        <div class="table-column">
+
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>Question</th>
+                    <th>Answer</th>
+                    <th>Tags</th>
+                    <th>Stapel</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+
+                </tr>
+                </thead>
+                <tbody>
+                <tr class="tile" th:each="card : ${cardlist}">
+                    <td th:text="${card.question} "></td>
+                    <td th:text="${card.answer}"></td>
+                    <td th:text="${card.tags} "></td>
+                    <td th:text="${card.stapel_id}"></td>
+                    <form action="#" th:action="@{/editCard/{id}(id=${card.id})}" method="get">
+                        <td>
+                            <button class="btn" type="submit" th:text="Edit" th:value="${card.id} "></button>
+                        </td>
+                    </form>
+                    <form action="#" th:action="@{/deleteCard/{id}(id=${card.id})}" method="post">
+                        <td>
+                            <button class="btn" type="submit" th:value="${card.id}" th:text="Delete"></button>
+                        </td>
+                    </form>
+                </tr>
+                </tbody>
+            </table>
+
+
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>

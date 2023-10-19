@@ -1,0 +1,39 @@
+<!doctype html>
+<html xmlns:th="https://www.thymeleaf.orga">
+<link th:href="@{css/StyleShowCard.css}" rel="stylesheet">
+
+<head>
+    <title>ShowCard</title>
+</head>
+<body>
+<body class="body">
+
+<div th:replace="fragments/nav">This content will be gone</div>
+<br>
+<div class="container">
+    <h1>Created Card:</h1>
+
+    <div class="flip-card-container">
+        <div class="flip-card">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <p th:text="${CreatedCard.question}"/>
+                </div>
+                <div class="flip-card-back">
+                    <p th:text="${CreatedCard.answer}"/>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <p class="Tags" th:text="'Tags: ' + ${CreatedCard.tags}"/>
+    <br>
+    <p style="text-align:center">
+        <button><a href="/CreateCard">Create another Card</a></button>
+    </p>
+</div>
+<div th:replace="fragments/footer">This content will be gone</div>
+
+
+</body>
+</html>

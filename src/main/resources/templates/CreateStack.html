@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+
+    <title>Create Stack</title>
+    <link rel="stylesheet" th:href="@{../css/StyleCreateStack.css}">
+</head>
+<body>
+<div th:replace="fragments/nav">This content will be gone</div>
+<div class="container">
+    <div class="tile">
+        <form action="#" th:action="@{/PostStack}" th:object="${NewStackObject}" method="post">
+            <h1>Create your Stack</h1>
+
+            <br>
+            Name <br>
+            <input typ="text" th:field="*{name}" placeholder="Name" autocomplete="off" autofocus required> <br>
+            <br>
+            <input class="btn" type="submit" value="save">
+            <br>
+            <br>
+            <br>
+            <a th:href="@{/CreateCardMenu}"> &#10145 Go to Create card</a>
+
+        </form>
+    </div>
+</div>
+<div th:replace="fragments/footer">This content will be gone</div>
+</body>
+</html>

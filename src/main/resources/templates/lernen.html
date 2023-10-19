@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Lernen</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="/css/lernenstyle.css" rel="stylesheet">
+
+</head>
+<body>
+<div th:replace="fragments/nav"></div>
+<div class="container">
+    <div class="lernen-container">
+        <div class="object">
+            <div class="tile" th:list="cardList">
+
+
+                <div class="bcard">
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+
+
+                                <h1 th:text="${card.question}"></h1>
+
+
+                            </div>
+                            <div class="flip-card-back">
+
+                                <h1 th:text="${card.answer}"></h1>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <container class="buttons">
+                <a th:href="@{/falsch}" th:name="counter">
+                    <button type="button" class="btn btn-primary falsch">Schwer</button>
+                </a>
+
+                <a th:href="@{/richtig}" th:name="counter">
+                    <button type="button" class="btn btn-primary richtig rainbow rainbow-5">Leicht</button>
+                </a>
+            </container>
+        </div>
+    </div>
+</div>
+<div th:replace="fragments/footer"></div>
+
+</body>

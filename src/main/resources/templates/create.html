@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Menu</title>
+    <link rel="stylesheet" th:href="@{/css/StyleCreate.css}">
+</head>
+<body>
+<div th:replace="fragments/nav">This content will be gone</div>
+<div class="container">
+    <div class="tile">
+        <a th:href="@{/CreateCardMenu}"><p>Create Card</p></a>
+    </div>
+    <div class="tile">
+        <a th:href="@{/CreateStack}"><p>Create Stapel</p></a>
+    </div>
+    <div class="tile">
+        <a th:href="@{/edit}"><p>Edit</p></a>
+    </div>
+</div>
+<div th:replace="fragments/footer">This content will be gone</div>
+</body>
+</html>

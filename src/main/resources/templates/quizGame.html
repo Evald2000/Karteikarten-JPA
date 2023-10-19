@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>QuizGame</title>
+    <link th:href="@{/css/QuizGame.css}" rel="stylesheet">
+
+</head>
+<body>
+
+<div th:replace="fragments/nav"></div>
+
+
+<div class="tile" th:each="card:${cardList}">
+    <div class="flip-card-container">
+        <div class="flip-card">
+            <div class="flip-card-inner">
+                <div class="flip-card-front" th:style="'background-color:' + ${color}">
+                    <h1 th:text="${card.question}"></h1>
+                </div>
+                <div class="flip-card-back">
+                    <h1 th:text="${card.answer}"></h1>
+                    <p></p>
+                    <p></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="button-container">
+
+        <div class="button-unten">
+            <form action="#" th:action="@{/postquizGame}" th:object="${formObject}" method="post">
+                <input type="hidden" th:value="${URL}" th:id="url" th:name="url">
+                <input class="button" placeholder="Bitte antwort eingeben" th:field="*{user_antwort}" autocomplete="off"
+                       required autofocus>
+                <input type="hidden" th:value="${card.id}" th:id="card_id" th:name="card_id">
+                <input type="hidden" th:value="${quiz}" th:id="quiz_id" th:name="quiz_id">
+                <input type="hidden" th:value="${card.stapel_id}" th:id="stapel_id" th:name="stapel_id">
+                <input type="hidden" th:value="${user_Name}" th:id="userName" th:name="userName">
+
+
+
+                <input class="button-butt" type="submit" value="Antwort Bestätigen">
+            </form>
+
+
+        </div>
+    </div>
+</div>
+
+<div th:replace="fragments/footer"></div>
+
+</body>

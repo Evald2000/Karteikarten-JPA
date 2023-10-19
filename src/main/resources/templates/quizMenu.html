@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Quiz</title>
+    <link rel="stylesheet" th:href="@{/css/quiz-menu.css}">
+</head>
+<body>
+
+<div th:replace="fragments/nav">This content will be gone</div>
+<div class="container">
+    <div class="tile" th:each="stapel : ${stapelList}">
+        <a th:text="${stapel.name}" th:href="@{/quizGame?id=}+${stapel.id}"></a>
+    </div>
+    <div class="tile">
+        <a th:href="@{/CreateStack}">+</a>
+    </div>
+
+</div>
+<div th:replace="fragments/footer">This content will be gone</div>
+
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Card</title>
+    <link th:href="@{/css/editCardStyle.css}" rel="stylesheet">
+
+</head>
+<body>
+
+<div th:replace="fragments/nav"></div>
+
+<div class="container-Complet">
+
+    <div class="flip-card-container">
+        <div class="flip-card">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <h1 th:text="${card.question}"></h1>
+                </div>
+                <div class="flip-card-back">
+                    <h1 th:text="${card.answer}"></h1>
+                    <p></p>
+                    <p></p>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+    <div class="input-container">
+        <form action="#" th:action="@{/editCard/}" th:object="${NewCardObject}" method="post">
+            <div class="input">Question:
+                <input type="text" th:field="*{question}" placeholder="Question" autocomplete="off" autofocus required>
+            </div>
+            <br>
+            <div class="input"> Answer:
+                <input type="text" th:field="*{answer}" placeholder="Answer" autocomplete="off" required></div>
+            <br>
+            <div class="input"> Tags:
+                <input type="text" th:field="*{tags}" placeholder="House, vacation, ..." autocomplete="off"></div>
+            <br>
+            <input type="hidden" th:value="${card.stapel_id}" th:id="stapel_id" th:name="stapel_id">
+
+
+            <input class="btn" type="submit" value="Save">
+            <input class="btn" type="reset" value="Reset">
+
+        </form>
+    </div>
+</div>
+<div th:replace="fragments/footer">This content will be gone</div>
+
+</body>

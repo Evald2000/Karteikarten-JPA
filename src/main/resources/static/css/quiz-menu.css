@@ -1,0 +1,96 @@
+body {
+    margin: 0;
+    padding: 0;
+
+    background-color: #ededed;
+    height: 100vh;
+    font-family: Calibre,sans-serif;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    min-height: 88.4%;
+    max-width: 2000px;
+    max-height: 2000px;
+    margin: 0 auto;
+    padding: 0 0 100px;
+    position: relative;
+    
+}
+
+.tile {
+    position: relative;
+    height: 230px; 
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 390px); /* Feste Breite für jede Box und automatische Anordnung */
+    gap: 10px;
+    background-color: #f9f9f9;
+    border: 10px solid #002a5c;
+    box-shadow: 0 5px 9px rgba(0, 0, 0, 0.8);
+    margin: 10px;
+    padding: 20px;
+    text-align: center;
+    text-justify: center;
+    transition: transform 0.3s;
+    cursor: pointer;
+    border-radius: 5px;
+    color:black;
+    
+}
+
+tile::before {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+}
+
+.tile p {
+    font-size: 65px;
+    font-weight: bold;
+    color: black;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color:#1a222a;
+}
+.tile a {
+    font-size: 75px;
+    font-weight: bold;
+    color: #fff;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    
+    
+}
+
+.tile:hover{
+transform: scale(1.1);
+    background-color: #002a5c;
+    border: 10px solid #f9f9f9;
+    color: #f9f9f9;
+}
+.tile p:hover{
+    color: #f9f9f9;
+}
+
+a{
+    color: black;
+}
+
+p{
+    color:#1a222a;
+}

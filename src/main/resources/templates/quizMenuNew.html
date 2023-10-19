@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz 1</title>
+    <link rel="stylesheet" th:href="@{/css/styleQuizMenuNew1.css}">
+</head>
+<body>
+<div th:replace="fragments/nav">This content will be gone</div>
+
+<form th:action="@{/quizGame}" method="get">
+    <div class="container">
+        <div class="container-stapel">
+            <h1>Wähle deine(n) Stapel</h1>
+            <div class="tile" th:each="stapel : ${stapelList}">
+                <input type="checkbox" th:value="${stapel.id}" th:id="stapelId" th:name="stapelId"
+                       th:text="${stapel.name}">
+
+            </div>
+        </div>
+        <div class="container-fach">
+            <h1>Wähle deine(n) Fach</h1>
+            <div class="tile" th:each="tag : ${tagList}">
+                <input type="checkbox" th:value="${tag}" th:id="tag" th:name="tag" th:text="${tag}">
+            </div>
+        </div>
+        <div class="container-frage">
+            <h1>Fragen Anzahl </h1>
+            <div class="tile" th:each="zahl : ${zahlList}">
+                <input type="radio" th:value="${zahl}" th:id="zahl" th:name="zahl" th:text="${zahl}">
+
+            </div>
+
+            <input class="num" type="number" placeholder="  Zahl  " th:id="zahl" th:name="zahl" min="1">
+
+
+        </div>
+    </div>
+    <div class="container-submit">
+        <input class="button" type="reset" value="Reset">
+        <input class="button" type="submit" value="Weiter">
+    </div>
+</form>
+<div class="go">
+    <a th:href="@{/quizResultsView}"> &#10145 Go to Quiz statistic</a>
+</div>
+
+<div th:replace="fragments/footer">This content will be gone</div>
+</body>
+</html>

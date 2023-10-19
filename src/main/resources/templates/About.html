@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+
+    <link th:href="@{/css/StyleAbout.css}" rel="stylesheet">
+    <title>About</title>
+</head>
+<body>
+<div th:replace="fragments/nav">This content will be gone</div>
+<h1 align="center">About us</h1>
+<div class="container">
+
+    <br>
+    <div class="tile">
+        <h2>Marko Kristo</h2>
+        <img th:src="@{/images/marko.JPG}" alt="" height="200px" width="300px"/>
+        <h3>Chef, Projektleiter, CEO, FULL STACK SENIOR </h3>
+        <h4>Ausserdem: Küchenchef, spendiert feinstes Studentenfutter</h4>
+    </div>
+
+    <div class="tile">
+        <h2>Ewald Denhof</h2>
+        <img th:src="@{/images/ewald.jpg}" alt="Ewald, möchte lieber mit V geschrieben werden" height="200px"
+             width="300px"/>
+        <h3>Mr. Algorithmus, Markos Größtes Problem</h3>
+        <h4>Würde gerne mit V geschrieben werden </h4>
+    </div>
+
+
+
+    <div class="tile">
+        <h2>Benedikt Vesely</h2>
+        <img th:src="@{/images/Benni.jpg}" alt="Irgendjemand muss den Alpro ja kaufen.." height="200px" width="300px"/>
+        <h3>Wenigstens einer, der auf die Rechtschreibung achtet</h3>
+        <h4>Kollege, Kollege...</h4>
+    </div>
+
+</div>
+
+
+<div th:replace="fragments/footer">This content will be gone</div>
+</body>
+</html>

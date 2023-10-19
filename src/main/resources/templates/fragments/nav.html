@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" th:href="@{../css/style.css}">
+    <title>nav</title>
+</head>
+<body>
+<nav class="navbarMarko">
+    <a class="navbar-brand" th:href="@{/}">
+        <img src="https://uploads-ssl.webflow.com/5e8de059d35d92d837a57961/5fd23dc18d7d24876d2919d8_LOGO_L_POS_RGB.svg"
+             width="180" height="68.75">
+    </a>
+    <div class="navbar1">
+        <div class="profil">
+
+        </div>
+        <div>
+
+            <li class="liMarko home"><a th:href="@{/}">Home</a></li>
+            <li class="liMarko about"><a th:href="@{About}">About</a></li>
+            <li class="liMarko contact"><a th:href="@{/Contact}">Contact</a></li>
+            <span th:if="${userName == 'anonymousUser'}"> <li class="buttonMarko login"><a th:href="@{/login}">Login</a></li></span>
+            <span th:if="${userName == 'anonymousUser'}"> <li class="buttonMarko login"><a th:href="@{/register}">Register</a></li> </span>
+            <span th:if="${userName != 'anonymousUser'}">
+                <div class="dropdown">
+                   <a th:href="@{/}" th:text="${userName}"></a>
+                    <div class="dropdown-content">
+                        <li class="buttonMarko login"><a th:href="@{/custom}">Customize</a></li>
+                        <li class="buttonMarko login"><a th:href="@{/logout}">Logout</a></li>
+                    </div>
+                </div>
+                        </span>
+        </div>
+    </div>
+    <div class="button-container">
+
+    </div>
+</nav>
+</body>
+</html>

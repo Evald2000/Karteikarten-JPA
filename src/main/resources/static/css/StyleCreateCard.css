@@ -1,0 +1,174 @@
+/* Dropdown Button */
+
+body {
+    margin: 0;
+    padding: 0;
+
+    background-color: #ededed;
+    font-family: Calibre,sans-serif;
+
+
+}
+
+.btn{
+    background-color: #f9f9f9;
+    width: 150px;
+    height: 50px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: 500;
+    font-size: 30px;
+    color:#1a222a;
+}
+
+.btn:hover{
+    transform: scale(1.05);
+}
+
+.container {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+
+
+    padding:0 0 111px;
+    
+}
+
+.tile {
+    position: relative;
+    /*flex: 1;*/
+    width: 700px;
+    height: 700px;
+    min-width: 300px;
+    max-width: 100%;
+    min-height: 300px;
+    max-height: 100%;
+    background-color: #002a5c;
+    border: 10px solid #ffffff;
+    box-shadow: 0 5px 9px rgba(0, 0, 0, 0.8);
+    margin: 10px;
+    padding: 20px;
+    text-align: center;
+    text-justify: center;
+    font-family: Calibre,sans-serif;
+        font-size: xx-large;
+    color: #f9f9f9;
+    
+    
+}
+
+tile::before {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+}
+
+.tile p {
+    font-size: 75px;
+    font-weight: bold;
+    color: #fff; 
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+input{
+    width: 220px;
+    height: 40px;
+}
+.dropbtn {
+    background-color: #04AA6D;
+    width: auto;
+    height: 20;
+    color: white;
+    padding: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+    font-size: 25px;
+    border: 5px solid #ffffff;
+    cursor: pointer;
+  }
+  .wind{
+      font-size: 30px;
+      width: 400px;
+  }
+  /* The container <div> - needed to position the dropdown content */
+  .dropdown {
+    position: relative;
+    display: inline-block;
+      margin-top: 10px;
+
+  }
+  
+  /* Dropdown Content (Hidden by Default) */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  /* Links inside the dropdown */
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  .form-control{
+      font-size: 30px;
+      color:#1a222a;
+  }
+
+  .dropbtn::after {
+    content: "▼"; /* Unicode-Code für den Pfeil nach unten */
+    margin-left: 10px; /* Abstand zwischen dem Text und dem Pfeil */
+}
+  
+  /* Change color of dropdown links on hover */
+  .dropdown-content a:hover {background-color: #ddd;}
+  
+  /* Show the dropdown menu on hover */
+  .dropdown:hover .dropdown-content {display: block;}
+  
+  /* Change the background color of the dropdown button when the dropdown content is shown */
+  .dropdown:hover .dropbtn {background-color: #3e8e41;}
+
+  .placeholder {
+    transition: transform 0.3s;
+}
+
+    .placeholder:hover {
+    transform: scale(1.1);
+}
+.tile1 {
+    position: relative;
+    height: 50px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 30px); /* Feste Breite für jede Box und automatische Anordnung */
+    gap: 10px;
+
+    border: 10px solid #ffffff;
+    box-shadow: 0 5px 9px rgba(0, 0, 0, 0.8);
+    margin: 10px;
+    padding: 20px;
+    text-align: center;
+    text-justify: center;
+    transition: transform 0.3s;
+    cursor: pointer;
+
+
+}
