@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 @Entity
 @Builder
 @AllArgsConstructor
+@Table(name = "stapel")
 public class Stapel {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
