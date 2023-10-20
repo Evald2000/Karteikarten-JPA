@@ -47,7 +47,7 @@ public class LernenController {
         maxCounter = maxId-minId;
         if (current_id != stackId) { //wenn man in andere Stapel geht
             cardList = cardRepo.findAllCardsByStapelId(stackId);
-            i = 0;
+            i = 1;
             bonusCounter = 0;
         }
 
