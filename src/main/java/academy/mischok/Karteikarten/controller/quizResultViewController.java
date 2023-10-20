@@ -9,6 +9,8 @@ import academy.mischok.Karteikarten.controller.repository.StapelRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -34,13 +36,13 @@ public class quizResultViewController {
 
     @GetMapping("/quizResultsView")
     public String quizResult(Model model){
-//        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-//        String currentPrincipalName = authentication.getName();
-//        List<Integer> quizIds=antwortRepo.findAllIdsBYUserName(currentPrincipalName);
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        String currentPrincipalName = authentication.getName();
+        List<Integer> quizIds=antwortRepo.findByUserName(currentPrincipalName).stream().map(cardUserAntwort::getQuiz_id).distinct().toList();
         List<Stapel> stapels=stapelRepo.findAll();
         List<Card> cardList=card.findAll();
-//        List<cardUserAntwort> antwortList=antwortRepo.findAllByUserName(currentPrincipalName);
-//        model.addAttribute("list", methods.quizResults(antwortList,stapels,cardList,quizIds) );
+        List<cardUserAntwort> antwortList=antwortRepo.findByUserName(currentPrincipalName);
+        model.addAttribute("list", methods.quizResults(antwortList,stapels,cardList,quizIds) );
         return "quizResultsView";
     }
 

@@ -10,6 +10,8 @@ import academy.mischok.Karteikarten.controller.repository.StapelRepository;
 import jakarta.persistence.criteria.Predicate;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -31,7 +33,7 @@ public class QuizGameController {
     private Methods methods;
 
     private int count = 0;
-    private int quiz_id = 0;
+    private int quiz_id=0;
     private List<Long> currentID;
     private List<String> currentTag;
     private int currentZahl;
@@ -52,8 +54,12 @@ public class QuizGameController {
         if (color == null) {
             color = "#002a5c";
         }
+        if(antwortRepo.findAll().stream().mapToInt(cardUserAntwort::getQuiz_id).max().orElse(0)>quiz_id){
+            quiz_id=antwortRepo.findAll().stream().mapToInt(cardUserAntwort::getQuiz_id).max().orElse(0)+1;
+        }
         System.out.println("TAGS LISTE"+tag);
-
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        String currentPrincipalName = authentication.getName();
 
         model.addAttribute("color", color);
 
@@ -68,7 +74,7 @@ public class QuizGameController {
         }
 
         if (currentID != null && currentTag != null && currentZahl != 0 && currentUser != null) {
-            if (!currentID.equals(stapelId) || !currentTag.equals(tag) || currentZahl != zahl ) {
+            if (!currentID.equals(stapelId) || !currentTag.equals(tag) || currentZahl != zahl || !currentUser.equals(currentPrincipalName)) {
                 count = 0;
 
             }
@@ -76,6 +82,7 @@ public class QuizGameController {
         currentID = stapelId;
         currentTag = tag;
         currentZahl = zahl;
+        currentUser = currentPrincipalName;
         List<Card> cardList=null;
 
 
@@ -92,7 +99,7 @@ public class QuizGameController {
             if (count == 0) {
                 quiz_id++;
             }
-
+            model.addAttribute("user_Name", currentPrincipalName);
             model.addAttribute("count", count++);
             model.addAttribute("quiz", quiz_id);
             model.addAttribute("cardList", methods.getRandomCard(cardList, count, zahl, quiz_id));

@@ -9,7 +9,7 @@
 <body>
 
 <div th:replace="fragments/nav"></div>
-
+<div th:text="${count}"></div>
 
 <div class="tile" th:each="card:${cardList}">
     <div class="flip-card-container">

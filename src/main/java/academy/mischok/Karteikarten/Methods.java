@@ -18,11 +18,12 @@ public class Methods {
     private ArrayList<Integer> nummernlist = new ArrayList<>();
 
     public Card getRandomCard(List<Card> cardList, int count, int zahl, int quizID) {
-        if (currentId != 0) {
+
             if (currentId != quizID) {
-                nummernlist = new ArrayList<>();
+                nummernlist.clear();
+
             }
-        }
+
         int randomNumber = 0;
 
         if (count < zahl + 1) {
