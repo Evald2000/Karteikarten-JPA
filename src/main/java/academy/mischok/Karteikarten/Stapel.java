@@ -16,13 +16,12 @@ public class Stapel {
     Long id;
     @Column(name="stapel_name")
     String name;
-    @Column(name="subject")
-    String subject;
+
 
 
 
     public Stapel() {
-        this.subject=subject;
+
         this.name = name;
         this.id=id;
     }
@@ -35,12 +34,7 @@ public class Stapel {
         this.name = name;
     }
 
-    public String getSubject() {
-        return subject;
-    }
 
-    public void setSubject(String subject) {
-        this.subject = subject;}
 
     public Long getId() {
         return id;
